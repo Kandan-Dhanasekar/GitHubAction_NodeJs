@@ -15,6 +15,7 @@ jobs:
       - name: test the software
         run: npm test
   Deployment:
+    needs: Testing
     runs-on: ubuntu-latest
     steps:
       - name: download repository
