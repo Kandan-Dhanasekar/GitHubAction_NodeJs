@@ -1,0 +1,17 @@
+name: Github_action_Nodejs_test
+on: push
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download repository
+        uses: actions/checkout@v3
+      - name: install node js
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 18
+      - name: install the software
+        run: npm ci
+      - name: test the software
+        run: npm test
+      
